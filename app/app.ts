@@ -6,6 +6,15 @@ purpose of the file is to pass control to the app’s first module.
 
 import * as application from 'application';
 
+
+if(module["hot"]) {
+    module["hot"].accept(["../node_modules/nativescript-dev-webpack/load-application-css-regular.js"], () => {
+        console.log("--->>> app.css accepted");
+
+    })
+
+}
+
 application.run({ moduleName: 'app-root' });
 
 /*
